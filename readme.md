@@ -44,10 +44,14 @@ pip install numpy opencv-python matplotlib tensorflow scikit-learn imutils
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
+```
+
+
 ### Set dataset paths
 ```python
 positive_path = '/content/drive/MyDrive/Brain_Tumor_Dataset/Positive'
 negative_path = '/content/drive/MyDrive/Brain_Tumor_Dataset/Negative'
+```
 
 
 ### Load images and preprocess
@@ -64,19 +68,20 @@ brain_tumour_cnn.fit(
     callbacks=[save_best, stop_training],
     class_weight=class_weight_dict
 )
+```
 
 ### Load the best saved model
 ```python
 from tensorflow.keras.models import load_model
 
 tumour_model = load_model('/content/drive/MyDrive/Brain_Tumor_Dataset/model/brain_cnn.keras')
-
+```
 
 ### Make predictions
 ```python
 y_pred_prob = tumour_model.predict(test_mri)
 y_pred = (y_pred_prob > 0.5).astype(int).flatten()
-
+```
 
 ### Evaluate the model
 
