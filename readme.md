@@ -112,9 +112,7 @@ Brain_Tumor_Dataset/
 │
 ├── Positive/          # MRI images with tumor
 ├── Negative/          # MRI images without tumor
-├── model/             # Saved CNN model (brain_cnn.keras)
-├── brain-tumor.ipynb  # Training and evaluation notebook
-└── README.md          # Project documentation
+
 ```
 
 ## 🔹 References
